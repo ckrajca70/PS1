@@ -16,10 +16,17 @@ namespace PS_DelegatesAndEvents
             WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
 
 
-            del1(5, WorkType.Golf);
-            del2(10, WorkType.GenerateReports);
+            //del1(5, WorkType.Golf);
+            //del2(10, WorkType.GenerateReports);
+
+            DoWork(del1);
 
             Console.Read();
+        }
+
+        static void DoWork(WorkPerformedHandler del)
+        {
+            del(5, WorkType.GoToMeetings);
         }
 
         static void WorkPerformed1(int hours,WorkType workType)
